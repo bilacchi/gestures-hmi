@@ -66,6 +66,7 @@ def buildModel(nclasses:int=3, weights:str=None):
                                         tf.keras.layers.LSTM(128, return_sequences = True, activation = 'relu'),
                                         tf.keras.layers.LSTM(64, return_sequences = False, activation = 'relu'),
                                         tf.keras.layers.Dense(64, activation = 'relu'),
+                                        tf.keras.layers.Dense(64, activation = 'relu'),
                                         tf.keras.layers.Dense(32, activation = 'relu'),
                                         tf.keras.layers.Dense(nclasses, activation = 'softmax')])
     
@@ -111,7 +112,7 @@ def runSkeleton():
 def runClassification():
     actions = np.array(['hello', 'thanks', 'iloveyou'])
     colors = [(245,117,16), (117,245,16), (16,117,245)]
-    model = buildModel(weights='action.h5')
+    model = buildModel(weights='bla.h5')
     
     sequence = []
     sentence = []
